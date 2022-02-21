@@ -1,0 +1,2 @@
+import './AppNavigator';
+import './Switcher';
