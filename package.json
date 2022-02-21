@@ -1,0 +1,68 @@
+{
+  "name": "pentavaluetask",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios --simulator='iPhone 11'",
+    "start": "react-native start",
+    "pod": "npx pod-install",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint-fix": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
+    "lint-diff": "git diff --staged --name-only --relative --diff-filter=ACM | grep -E \"\\.(ts|tsx|js|jsx)$\" | xargs eslint"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "native-base": "^3.3.7",
+    "react": "17.0.2",
+    "react-native": "0.67.2",
+    "react-native-safe-area-context": "^3.4.1",
+    "react-native-svg": "^12.1.1",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-persist-seamless-immutable": "^2.0.0",
+    "redux-recompose": "^3.0.0",
+    "redux-thunk": "^2.4.1",
+    "seamless-immutable": "^7.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.178",
+    "@types/react-native": "^0.66.15",
+    "@types/react-redux": "^7.1.22",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/redux-devtools-extension": "^2.13.2",
+    "@types/redux-logger": "^3.0.9",
+    "@types/seamless-immutable": "^7.1.16",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-import-glob": "^2.0.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.4.4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
