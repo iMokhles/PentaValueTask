@@ -1,4 +1,4 @@
-import {Box, Center, FlatList, Flex, Image, Pressable, Text} from "native-base";
+import {Box, Center, FlatList, Flex, Image, Pressable, Text, useColorMode} from "native-base";
 import React, {memo, FC, useEffect, useState} from "react";
 import {ICON_TYPE, IMIcon} from "../IMIcon";
 import {ContactItemProps} from "./constants";
@@ -13,6 +13,7 @@ const ContactItem: FC<ContactItemProps> = (props) => {
         onPress
     } = props
 
+    const { colorMode } = useColorMode();
 
     const _renderCheckIcon = () => {
         if (selected) {
@@ -28,6 +29,9 @@ const ContactItem: FC<ContactItemProps> = (props) => {
         } else {
             return (
                 <Image
+                    _dark={{
+                        tintColor: '#afafaf'
+                    }}
                     key={'2'}
                     alt={'Empty Circle'}
                     rounded={'full'}
