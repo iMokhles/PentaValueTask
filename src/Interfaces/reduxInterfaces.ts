@@ -16,8 +16,22 @@ export interface AuthState {
     initialLoading: boolean;
 }
 
+export interface IContact {
+    id: string;
+    name: string;
+    email: string;
+    phoneNumber: string;
+    company: string;
+    picture: string;
+}
+
+export interface ContactsState {
+    contacts?: Array<IContact>;
+}
+
 export interface State {
     auth: AuthState;
+    contacts: ContactsState;
 }
 
 export interface ReduxObject {

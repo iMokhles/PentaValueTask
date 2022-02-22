@@ -3,6 +3,7 @@ import { persistReducer } from "redux-persist";
 import {configureMergeState } from 'redux-recompose';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from './auth/reducer';
+import contacts from './contacts/reducer';
 
 import {
     seamlessImmutableReconciler,
@@ -20,7 +21,7 @@ const transformerConfig = {
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    whitelist: ['auth', 'brands'],
+    whitelist: ['auth', 'contacts'],
     stateReconciler: seamlessImmutableReconciler,
     transforms: [seamlessImmutableTransformCreator(transformerConfig)]
 };
@@ -31,10 +32,17 @@ const authPersistConfig = {
     blacklist: ['initialLoading'],
 }
 
+const contactsPersistConfig = {
+    key: 'contacts',
+    storage: AsyncStorage,
+    blacklist: ['contacts'],
+}
+
 configureMergeState((state: ImmutableObject<State>, diff: State) => state.merge(diff));
 
 const rootReducer = combineReducers({
     auth: persistReducer(authPersistConfig, auth),
+    contacts: persistReducer(contactsPersistConfig, contacts),
 })
 
 export default persistReducer(persistConfig, rootReducer);
