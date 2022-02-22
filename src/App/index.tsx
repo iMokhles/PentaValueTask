@@ -6,7 +6,7 @@ import Switcher from "../Navigators/Switcher";
 import useTimeout from "@flaque/use-timeout";
 import {useDispatch} from "react-redux";
 import {authActionCreators} from "../Redux/Reducers/auth/actions";
-
+import '../Config'
 
 const App = () => {
 
